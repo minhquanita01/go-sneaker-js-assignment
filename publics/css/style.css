@@ -360,7 +360,7 @@ body
 
 @media screen and (max-width: 46.1875em)
 {
-    .product.column-container
+    .column-container
     {
         width: 340px;
         margin: 20px 28px;
