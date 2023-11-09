@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Sneaker</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,700&display=swap">
+    <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="main-container">
+        <div class="product column-container">
+            <div class="logo-at-top">
+                <img src="./img/nike.png" alt="G-Sneaker">
+            </div>
+            <div class="column-title">
+                <h2>Our Products</h2>
+            </div>
+            <div class="product column-body">
+                <!-- Product Item -->
+                <% products.forEach(function(product) { %>
+                    <div class="product-item-container">
+                        <div style="background-color: <%= product.shoes_color %>;" class="product-item-image-container">
+                            <img src="<%= product.shoes_image_path %>" alt="">
+                        </div>
+                        <h3 class="product-item-name"><%= product.shoes_name %></h3>
+                        <p class="product-item-description"><%= product.shoes_description %></p>
+                        <div class="product-item-sell-area">
+                            <span class="product-item-price">$<%= product.shoes_price %></span>
+                            <span class="add-to-cart-btn" data-shoe-id="<%= product.shoes_ID %>">ADD TO CART</span>
+                            <div class="added-to-cart-container" data-shoe-id="<%= product.shoes_ID %>">
+                                <img src="./img/check.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+            
+        </div>
+
+        <div class="cart column-container">
+            <div class="logo-at-top">
+                <img src="./img/nike.png" alt="G-Sneaker">
+            </div>
+            <div class="column-title">
+                <h2>Your cart</h2>
+                <h2 class="total-cost">$0.00</h2>
+            </div>
+            <p style="display: block;" class="no-item">Your cart is empty.</p>
+            <div class="cart column-body">
+            </div>              
+        </div>
+        <script src="./scripts/control_cart.js"></script>
+    </div>
+</body>
+</html>
