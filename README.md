@@ -35,5 +35,8 @@ npm install
 ```
 7. Start project
 ```terminal
+
+## My online-deployment
+- Backend: https://go-sneaker.onrender.com
 npm start
 ```
