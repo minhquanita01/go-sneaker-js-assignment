@@ -1,12 +1,10 @@
 const express = require('express');
 const mysql = require('mysql2');
-const cors = require('cors');
 const productRoutes = require('./routes/shoes_routing');
 
 const app = express()
 
 app.use(express.static("publics"))
-app.use(cors())
 app.set("view engine", "ejs")
 
 const db = mysql.createConnection(
@@ -20,7 +18,8 @@ const db = mysql.createConnection(
     });
 
 db.connect((error) => {
-    if (error) throw error;
+    if (error) 
+        throw error;
     console.log('Connected to database successfully');
 });
 

@@ -1,7 +1,10 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 module.exports = function(db) {
     const router = express.Router();
+
+    router.use(bodyParser.json());
 
     function getAllShoes(callback) {
         const query = 'SELECT shoes_ID, shoes_image_path, shoes_name, shoes_description, shoes_price, shoes_color FROM go_shoes WHERE shoes_quantity > 0';
@@ -74,18 +77,40 @@ module.exports = function(db) {
     });
 
     // Add a product into database
-    router.post('/api/v1/products', (req, res) => {
-        
+    router.post('/api/v1/products', (request, response) => {
+        const insert_values = request.body;
+        console.log(insert_values);
+        const query = 'INSERT INTO go_shoes SET ?';
+        db.query(query, [insert_values], (error, result) => {
+            if (error)
+                throw error;
+            else
+                response.json({message: `Data inserted successfully with ${result.affectedRows} row(s) affected.`});
+        });
     });
 
-    // Update a product by id
-    router.put('/api/v1/products/:id', (req, res) => {
-        
+    // Update a product by id (request body is an object with {key: value} = {column: value_to_update})
+    router.put('/api/v1/products/:id', (request, response) => {
+        const shoeId = request.params.id;
+        const updateFeild = request.body;
+        const query = 'UPDATE go_shoes SET ? WHERE shoes_ID = ?';
+        db.query(query, [updateFeild, shoeId], (error, result) => {
+            if (error)
+                throw error;
+            else
+                response.json({message: "Data updated successfully."});
+        });
     });
 
     // Delete a product by id
-    router.delete('/api/v1/products/:id', (req, res) => {
-        
+    router.delete('/api/v1/products/:id', (request, response) => {
+        const query = 'DELETE FROM go_shoes WHERE shoes_ID = ?';
+        db.query(query, [request.params.id], (error, result) => {
+            if (error)
+                throw error;
+            else
+                response.json({message: "Deleted successfully."});
+        });
     });
 
     return router;

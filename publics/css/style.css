@@ -56,8 +56,8 @@ body
     overflow: hidden;
     width: 360px;
     height: 600px;
-    padding: 0 28px;
-    margin: 0 auto 20px;
+    padding: 12px 28px;
+    margin: 20px auto 20px;
     background-color: var(--white-main-color);
     box-shadow: 0 3.2px 2.2px rgba(0,0,0,.02), 
                 0 7px 5.4px rgba(0,0,0,.028), 
@@ -84,7 +84,7 @@ body
 .column-container .logo-at-top
 {
     position: relative;
-    margin: 20px 0px 12px;
+    margin: 12px 0px;
     padding-left: 2px;
 }
 
@@ -130,7 +130,7 @@ body
 
 .product .product-item-container
 {
-    padding: 20px 0 20px;
+    padding: 40px 0;
 }
 
 .product .product-item-image-container
@@ -232,6 +232,7 @@ body
     width: 135px;
     height: 135px;
     transform: rotate(-28deg) translateY(-40px);
+    filter: drop-shadow(0 30px 20px rgba(0,0,0,.2));
 }
 
 .cart .cart-item-info-zone
@@ -361,9 +362,9 @@ body
 
 @media screen and (max-width: 46.1875em)
 {
-    .column-container
+    .main-container
     {
-        width: 340px;
-        margin: 20px 28px;
+        height: auto;
+        flex-direction: column;
     }
 }
