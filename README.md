@@ -22,10 +22,9 @@ git clone https://github.com/minhquanita01/go-sneaker-js-assignment.git
 ```terminal
 cd go-sneaker-js-assignment
 ```
-6. Install these modules:
+6. Install all modules included in this project:
 ```terminal
-npm install ejs mysql2 express body-parser
-npm install --save-dev nodemon
+npm install
 ```
 7. Start project
 ```terminal
