@@ -17,17 +17,17 @@ To deploy and use this repository in your local machine:
 git clone https://github.com/minhquanita01/go-sneaker-js-assignment.git
 ```
 3. Use MySQL to execute the [`db_script.sql`](./database/db_script.sql) scripts.
-4. Create a `.env` file that contains: 
+4. Navigate to the project directory by this command below:
+```terminal
+cd go-sneaker-js-assignment
+```
+5. Create a `.env` file that contains: 
 ```terminal
 DB_DBNAME=<your_database_name>
 DB_USERNAME=<your_database_username>
 DB_PASSWORD=<your_database_password>
 DB_HOST=<your_database_host>
 DB_PORT=<your_database_port>
-```
-5. Navigate to the project directory by this command below:
-```terminal
-cd go-sneaker-js-assignment
 ```
 6. Install all modules included in this project:
 ```terminal
