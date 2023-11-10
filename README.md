@@ -16,7 +16,7 @@ To deploy and use this repository in your local machine:
 ```terminal
 git clone https://github.com/minhquanita01/go-sneaker-js-assignment.git
 ```
-3. Execute the [`db_script.sql`](./database/db_script.sql) scripts.
+3. Use MySQL to execute the [`db_script.sql`](./database/db_script.sql) scripts.
 4. Go to [`index.js`](./index.js) to update the database username, password and port.
 5. Navigate to the project directory by this command below:
 ```terminal
