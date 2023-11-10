@@ -13,4 +13,6 @@ In this assignment, I used:
 To deploy and use this repository in your local machine:
 1. Install if not exists MySQL (minimum: v8.0), NodeJS
 2. Clone this repository
-`https://github.com/minhquanita01/go-sneaker-js-assignment.git`
+```terminal
+git clone https://github.com/minhquanita01/go-sneaker-js-assignment.git
+```
