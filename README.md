@@ -37,3 +37,6 @@ npm install
 ```terminal
 npm start
 ```
+
+## My online-deployment
+- Backend: https://go-sneaker.onrender.com
